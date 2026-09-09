@@ -62,7 +62,7 @@ export VEHICLE_NAME="v1"
 export CCACHE_DIR=/tmp/ccache
 
 # Enable/Disable lidar detection model functionality ("centerpoint", "apollo", "transfusion", or "disable")
-export LIDAR_DETECTION_MODEL="centerpoint"
+export LIDAR_DETECTION_MODEL="clustering"
 
 # Set centerpoint model ("centerpoint", "centerpoint_tiny")
 # It is used when LIDAR_DETECTION_MODEL is set as "centerpoint"

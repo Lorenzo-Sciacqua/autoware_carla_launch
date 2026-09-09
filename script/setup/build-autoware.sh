@@ -5,6 +5,6 @@ pushd autoware
 
 mkdir -p src
 vcs import src < repositories/autoware.repos
-colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
+colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --parallel-workers 1
 
 popd # autoware
