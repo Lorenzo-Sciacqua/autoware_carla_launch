@@ -26,8 +26,14 @@ fi
 if [ ! -f "${MAP_PATH}/lanelet2_map.osm" ] || [ ! -f "${MAP_PATH}/pointcloud_map.pcd" ]; then
     echo "Downloading map ${MAP_NAME} from Google Drive..."
     FOLDER_ID="${MAP_FOLDER_IDS[$MAP_NAME]}"
+    
+    # Instructions for installing gdown:
+    # sudo apt install pipx
+    # pipx ensurepath
+    # pipx install gdown
+
     # gdown --folder creates a subfolder matching the Drive folder name,
-    # so we download into carla_map/ and let gdown create the Town subfolder.
+    # so it will download into carla_map/ and gdown will create the Town subfolder.
     gdown --folder "https://drive.google.com/drive/folders/${FOLDER_ID}" -O "carla_map/"
     echo "Download complete: ${MAP_PATH}"
 else
