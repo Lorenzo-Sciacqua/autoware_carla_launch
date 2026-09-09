@@ -9,11 +9,13 @@ mkdir -p ${LOG_PATH}
 # Note bridge should run later because it needs to configure Carla sync setting.
 # Python script will overwrite the settings if bridge run first.
 parallel --verbose --lb ::: \
-        "sleep 5 && RUST_LOG=z=info ${AUTOWARE_CARLA_ROOT}/external/zenoh_carla_bridge/target/release/zenoh_carla_bridge \
+        "sleep 10 && RUST_LOG=z=info ${AUTOWARE_CARLA_ROOT}/external/zenoh_carla_bridge/target/release/zenoh_carla_bridge \
                 --mode ros2 --zenoh-listen tcp/0.0.0.0:7447 \
                 --zenoh-config ${ZENOH_CARLA_BRIDGE_CONFIG} \
                 --carla-address ${CARLA_SIMULATOR_IP} 2>&1 \
                 | tee ${LOG_PATH}/bridge.log" \
         "uv run --project ${PYTHON_AGENT_PATH} ${PYTHON_AGENT_PATH}/main.py \
                 --host ${CARLA_SIMULATOR_IP} --rolename ${VEHICLE_NAME} \
+                --filter '${CARLA_VEHICLE_FILTER}' \
+                --weather '${CARLA_WEATHER}' \
                 2>&1 | tee ${LOG_PATH}/vehicle.log"

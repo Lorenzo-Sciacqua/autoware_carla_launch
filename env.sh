@@ -50,9 +50,20 @@ fi
 export PATH="$HOME/.local/bin:$PATH"
 
 # Export Map path
-export CARLA_MAP_NAME="Town01"
+export CARLA_MAP_NAME="${CARLA_MAP_NAME:-Town01}"
 export CARLA_MAP_PATH=${AUTOWARE_CARLA_ROOT}/carla_map/${CARLA_MAP_NAME}
 
+# Vehicle blueprint filter (CARLA blueprint ID)
+# Examples: "vehicle.tesla.model3", "vehicle.carlamotors.european_hgv" (truck),
+#           "vehicle.lincoln.mkz_2020", "vehicle.audi.a2"
+export CARLA_VEHICLE_FILTER="${CARLA_VEHICLE_FILTER:-vehicle.tesla.model3}"
+
+# Weather preset name (must match a carla.WeatherParameters attribute)
+# Examples: "ClearNoon", "CloudyNoon", "WetNoon", "HardRainNoon",
+#           "SoftRainNoon", "ClearSunset", "CloudySunset", "WetSunset",
+#           "WetCloudySunset", "HardRainSunset", "SoftRainSunset"
+# Set to empty string or "Default" to use CARLA's default weather
+export CARLA_WEATHER="${CARLA_WEATHER:-ClearNoon}"
 
 # Set Autoware Settings (Can be overwritten by CLI)
 export ROS_DOMAIN_ID=0
