@@ -24,8 +24,7 @@ mkdir -p ${LOG_PATH}
 
 # Run the program
 parallel --verbose --lb ::: \
-    "ros2 launch autoware_carla_launch autoware_zenoh.launch.xml
-     traffic_light_recognition:=false \
+    "ros2 launch autoware_carla_launch autoware_zenoh.launch.xml \
             2>&1 | tee ${LOG_PATH}/autoware.log" \
     "RUST_LOG=error ros2 run rmw_zenoh_cpp rmw_zenohd \
     	    2>&1 | tee ${LOG_PATH}/rmw_zenohd.log"
