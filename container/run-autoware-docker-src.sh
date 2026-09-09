@@ -14,6 +14,6 @@ if [ ! -d autoware ]; then
     git clone https://github.com/autowarefoundation/autoware.git -b ${AUTOWARE_VERSION}
 fi
 
-rocker --nvidia --privileged --x11 --ipc host \
+rocker --privileged --x11 --ipc host \
     --env HOST_UID=$(id -u) HOST_GID=$(id -g) \
     --volume $(pwd):/home/aw/autoware_carla_launch -- ${DOCKER_IMAGE}

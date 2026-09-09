@@ -11,6 +11,6 @@ if [ ! "$(docker images -q ${DOCKER_IMAGE})" ]; then
     docker build --no-cache -f ${DOCKER_FILE} -t ${DOCKER_IMAGE} .
 fi
 
-rocker --nvidia --network host --privileged --x11 --ipc host --ulimit memlock=${MEMLOCK}:${MEMLOCK} \
+rocker --network host --privileged --x11 --ipc host --ulimit memlock=${MEMLOCK}:${MEMLOCK} \
     --env HOST_UID=$(id -u) HOST_GID=$(id -g) \
     --volume $(pwd):/home/aw/autoware_carla_launch -- ${DOCKER_IMAGE}
