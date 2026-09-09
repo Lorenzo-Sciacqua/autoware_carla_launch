@@ -54,15 +54,80 @@ export CARLA_MAP_NAME="${CARLA_MAP_NAME:-Town01}"
 export CARLA_MAP_PATH=${AUTOWARE_CARLA_ROOT}/carla_map/${CARLA_MAP_NAME}
 
 # Vehicle blueprint filter (CARLA blueprint ID)
-# Examples: "vehicle.tesla.model3", "vehicle.carlamotors.european_hgv" (truck),
-#           "vehicle.lincoln.mkz_2020", "vehicle.audi.a2"
+# VEHICLE_BLUEPRINTS = [
+#     "vehicle.audi.a2",
+#     "vehicle.audi.etron",
+#     "vehicle.audi.tt",
+#     "vehicle.bh.crossbike",
+#     "vehicle.bmw.grandtourer",
+#     "vehicle.carlamotors.carlacola",
+#     "vehicle.carlamotors.european_hgv",
+#     "vehicle.carlamotors.firetruck",
+#     "vehicle.chevrolet.impala",
+#     "vehicle.citroen.c3",
+#     "vehicle.diamondback.century",
+#     "vehicle.dodge.charger_2020",
+#     "vehicle.dodge.charger_police",
+#     "vehicle.dodge.charger_police_2020",
+#     "vehicle.ford.ambulance",
+#     "vehicle.ford.crown",
+#     "vehicle.ford.mustang",
+#     "vehicle.gazelle.omafiets",
+#     "vehicle.harley-davidson.low_rider",
+#     "vehicle.jeep.wrangler_rubicon",
+#     "vehicle.kawasaki.ninja",
+#     "vehicle.lincoln.mkz_2017",
+#     "vehicle.lincoln.mkz_2020",
+#     "vehicle.mercedes.coupe",
+#     "vehicle.mercedes.coupe_2020",
+#     "vehicle.mercedes.sprinter",
+#     "vehicle.micro.microlino",
+#     "vehicle.mini.cooper_s",
+#     "vehicle.mini.cooper_s_2021",
+#     "vehicle.mitsubishi.fusorosa",
+#     "vehicle.nissan.micra",
+#     "vehicle.nissan.patrol",
+#     "vehicle.nissan.patrol_2021",
+#     "vehicle.seat.leon",
+#     "vehicle.tesla.cybertruck",
+#     "vehicle.tesla.model3",
+#     "vehicle.toyota.prius",
+#     "vehicle.vespa.zx125",
+#     "vehicle.volkswagen.t2",
+#     "vehicle.volkswagen.t2_2021",
+#     "vehicle.yamaha.yzf",
+# ]
+
 export CARLA_VEHICLE_FILTER="${CARLA_VEHICLE_FILTER:-vehicle.tesla.model3}"
 
 # Weather preset name (must match a carla.WeatherParameters attribute)
-# Examples: "ClearNoon", "CloudyNoon", "WetNoon", "HardRainNoon",
-#           "SoftRainNoon", "ClearSunset", "CloudySunset", "WetSunset",
-#           "WetCloudySunset", "HardRainSunset", "SoftRainSunset"
+# WEATHER_PRESETS = [
+#     "Default",
+#     "ClearNoon",
+#     "CloudyNoon",
+#     "WetNoon",
+#     "WetCloudyNoon",
+#     "MidRainyNoon",
+#     "HardRainNoon",
+#     "SoftRainNoon",
+#     "ClearSunset",
+#     "CloudySunset",
+#     "WetSunset",
+#     "WetCloudySunset",
+#     "MidRainSunset",
+#     "HardRainSunset",
+#     "SoftRainSunset",
+#     "ClearNight",
+#     "CloudyNight",
+#     "WetNight",
+#     "WetCloudyNight",
+#     "SoftRainNight",
+#     "MidRainyNight",
+#     "HardRainNight",
+#     "DustStorm",
+# ]
 # Set to empty string or "Default" to use CARLA's default weather
+
 export CARLA_WEATHER="${CARLA_WEATHER:-ClearNoon}"
 
 # Set Autoware Settings (Can be overwritten by CLI)
